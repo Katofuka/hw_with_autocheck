@@ -1,13 +1,24 @@
 .sidebar {
+    height: 60px;
 }
 
 .sidebar.open {
+
+    background-color: blue;
+    width: 200px;
+    max-height: 100%;
 }
 
 .background {
+    background-color: #b21232;
+
+
 }
 
 .nav {
+    display: flex;
+    flex-direction: column;
+
 }
 
 .nav a {
@@ -18,7 +29,9 @@
 
 .nav a.active {
 }
+
 .close {
+
 }
 
 .close img {
