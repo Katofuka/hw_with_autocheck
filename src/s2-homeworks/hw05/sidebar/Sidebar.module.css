@@ -26,6 +26,7 @@
 }
 
 .nav a:hover {
+    color: #4d5703;
 }
 
 .nav a.active {
