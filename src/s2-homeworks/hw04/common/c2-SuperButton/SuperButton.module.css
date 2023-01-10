@@ -1,21 +1,21 @@
 .button {
-    width: 132px;
+    min-width: 132px;
+    max-width: 176px;
     height: 30px;
     border: 1px solid #0066CC;
     border-radius: 3px;
     background: none;
     color: white;
+    margin: 10px;
 }
 
 .disabled {
-    width: 133px;
     background: #004D99;
     opacity: 0.5;
     color: #002E5C;
 }
 
 .secondary {
-    width: 176px;
     background-color: white;
     color: #0066CC;
 }
