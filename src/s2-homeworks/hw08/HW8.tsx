@@ -7,7 +7,7 @@ import User from './User'
 
 /*
 * 1 - дописать типы и логику (сортировка по имени, фильтрация по совершеннолетию) homeWorkReducer, проверить тестом
-* 2 - дописать компоненту User
+** 2 - дописать компоненту User
 * 3 - сделать стили в соответствии с дизайном
 * */
 
@@ -47,9 +47,8 @@ const HW8 = () => {
         setCurrentSort('down')
     }
     const check18 = () => {
-        setPeople(
-            homeWorkReducer(initialPeople, {type: 'check', payload: 18})
-        ) // совершеннолетние
+        const getNewPeople = homeWorkReducer(initialPeople, {type: 'check', payload: 18})
+        setPeople(getNewPeople) // совершеннолетние
         setCurrentSort('18')
     }
 
