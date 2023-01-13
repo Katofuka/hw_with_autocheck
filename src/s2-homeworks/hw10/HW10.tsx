@@ -20,8 +20,8 @@ const HW10 = React.memo(() => {
 
     const setLoading = useCallback(() => { // пишет студент // показать крутилку на 1,5 секунд
         // dispatch
-        dispatch(loadingAC(false))
-        setTimeout(() => dispatch(loadingAC(true)), 1500)
+        dispatch(loadingAC(true))
+        setTimeout(() => dispatch(loadingAC(false)), 1500)
 
         // setTimeout
 

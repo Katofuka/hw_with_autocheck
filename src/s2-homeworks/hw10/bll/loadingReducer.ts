@@ -6,7 +6,7 @@ export const loadingReducer = (state = initState, action: LoadingActionType): bo
     switch (action.type) {
         // пишет студент  // need to fix
         case 'CHANGE_LOADING': {
-            return !state
+            return state.isLoading;
         }
 
         default:
