@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useCallback} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import {AppStoreType} from './bll/store'
 import {loadingAC} from './bll/loadingReducer'
@@ -13,15 +13,19 @@ import {Loader} from './Loader'
 * 4 - сделать стили в соответствии с дизайном
 * */
 
-const HW10 = () => {
+const HW10 = React.memo(() => {
     // useSelector, useDispatch // пишет студент
-    const isLoading = false
+    const isLoading = useSelector<AppStoreType, boolean>(state => state.loading)
+    const dispatch = useDispatch();
 
-    const setLoading = () => { // пишет студент // показать крутилку на 1,5 секунд
+    const setLoading = useCallback(() => { // пишет студент // показать крутилку на 1,5 секунд
         // dispatch
+        dispatch(loadingAC(false))
+        setTimeout(() => dispatch(loadingAC(true)), 1500)
 
         // setTimeout
-    }
+
+    }, [])
 
     return (
         <div id={'hw10'}>
@@ -43,6 +47,6 @@ const HW10 = () => {
             </div>
         </div>
     )
-}
+})
 
 export default HW10

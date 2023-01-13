@@ -24,9 +24,10 @@ function Clock() {
         month: 'long',
     };
     const dateFormat: Intl.DateTimeFormatOptions = {
-        year: 'numeric',
-        month: 'numeric',
         day: 'numeric',
+        month: 'numeric',
+        year: 'numeric',
+        hour12: false
     };
 
     const start = () => {
