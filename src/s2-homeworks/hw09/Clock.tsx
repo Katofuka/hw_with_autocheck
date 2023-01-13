@@ -42,7 +42,6 @@ function Clock() {
     }
 
     const stop = () => {
-
         // пишут студенты // поставить часы на паузу, обнулить ид таймера (timerId <- undefined)
         clearInterval(timerId)
         setTimerId(undefined)
@@ -56,8 +55,8 @@ function Clock() {
         setShow(false)
     }
 
-    const stringTime =  date.toLocaleString('en-US', timeFormat) || <br/> // часы24:минуты:секунды (01:02:03)/(23:02:03)/(24:00:00)/(00:00:01) // пишут студенты
-    const stringDate = date.toLocaleString('en-US', dateFormat) || <br/> // день.месяц.год (01.02.2022) // пишут студенты, варианты 01.02.0123/01.02.-123/01.02.12345 не рассматриваем
+    const stringTime =  date.toLocaleString('ru', timeFormat) || <br/> // часы24:минуты:секунды (01:02:03)/(23:02:03)/(24:00:00)/(00:00:01) // пишут студенты
+    const stringDate = date.toLocaleString('ru', dateFormat) || <br/> // день.месяц.год (01.02.2022) // пишут студенты, варианты 01.02.0123/01.02.-123/01.02.12345 не рассматриваем
 
     // день недели на английском, месяц на английском (https://learn.javascript.ru/intl#intl-datetimeformat)
     const stringDay = date.toLocaleString('en-US', weekdayFormat)|| <br/> // пишут студенты
