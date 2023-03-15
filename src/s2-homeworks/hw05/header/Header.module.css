@@ -1,8 +1,23 @@
 .burgerMenuIcon {
+    background-color: rgba(40, 91, 128, 0.42);
+}
+.burgerMenuIcon:hover {
+    fill: #c9e5ff;
+    color: white;
 }
 
+
 .header {
+    grid-area: H;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 50px;
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 0 25px;
 }
 
 .header h1 {
+    color: rgba(40, 91, 128, 0.42);
 }

@@ -1,0 +1,11 @@
+.bodyPage {
+    display: grid;
+    grid-template-areas:
+            "H H H H"
+            "M P P P"
+            "M P P P";
+}
+
+.pages {
+    grid-area: P;
+}
