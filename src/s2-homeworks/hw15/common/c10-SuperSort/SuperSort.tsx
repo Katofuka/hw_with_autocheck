@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {memo} from 'react'
 import upIcon from '../../../../icons/up-arrow_icon.svg'
 import downIcon from '../../../../icons/down-arrow_icon.svg'
 import noneIcon from '../../../../icons/none-arrow_icon.svg'
@@ -25,7 +25,7 @@ export const pureChange = (sort: string, down: string, up: string) => {
     return down
 }
 
-const SuperSort: React.FC<SuperSortPropsType> = (
+const SuperSort: React.FC<SuperSortPropsType> = memo((
     {
         sort, value, onChange, id = 'hw15',
     }
@@ -59,6 +59,6 @@ const SuperSort: React.FC<SuperSortPropsType> = (
             {/*{icon} /!*а это убрать*!/*/}
         </span>
     )
-}
+})
 
 export default SuperSort

@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, {useCallback, useEffect, useMemo, useState} from 'react'
 import s2 from '../../s1-main/App.module.css'
 import s from './HW15.module.css'
 import axios from 'axios'
@@ -61,21 +61,21 @@ const HW15 = () => {
             })
     }
 
-    const onChangePagination = (newPage: number, newCount: number) => {
+    const onChangePagination = useCallback((newPage: number, newCount: number) => {
         // делает студент
         setPage(newPage)
         setCount(newCount)
         setSearchParams({ page: newPage.toString(), count: newCount.toString() })
         //
-    }
+    }, [setSearchParams])
 
-    const onChangeSort = (newSort: string) => {
+    const onChangeSort = useCallback((newSort: string) => {
         // делает студент
         // console.log('onChangeSort-----', 'newSort: ', newSort)
         setSort(newSort)
         setPage(1) // при сортировке сбрасывать на 1 страницу
         setSearchParams({sort: newSort})
-    }
+    }, [setSearchParams])
 
     useEffect(() => {
         const params = Object.fromEntries(searchParams)
@@ -84,7 +84,7 @@ const HW15 = () => {
         setCount(+params.count || 4)
     }, [searchParams])
 
-    const mappedTechs = techs.map(t => (
+    const mappedTechs = useMemo(() =>techs.map(t => (
         <div key={t.id} className={s.row}>
             <div id={'hw15-tech-' + t.id} className={s.tech}>
                 {t.tech}
@@ -94,15 +94,15 @@ const HW15 = () => {
                 {t.developer}
             </div>
         </div>
-    ))
+    )), [techs])
 
     return (
         <div id={'hw15'}>
             <div className={s2.hwTitle}>Homework #15</div>
 
             <div className={s2.hw}>
-                {idLoading && <div id={'hw15-loading'} className={s.loading}><div></div><div></div></div>}
-                {/*<div id={'hw15-loading'} className={s.loading}><div></div><div></div></div>*/}
+                {/*{idLoading && <div id={'hw15-loading'} className={s.loading}><div></div><div></div></div>}*/}
+                <div id={'hw15-loading'} className={s.loadin}>Loadin...</div>
                 <SuperPagination
                     page={page}
                     itemsCountForPage={count}

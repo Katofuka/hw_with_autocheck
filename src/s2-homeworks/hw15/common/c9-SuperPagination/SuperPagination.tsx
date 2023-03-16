@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {memo} from 'react'
 import SuperSelect from '../../../hw07/common/c5-SuperSelect/SuperSelect'
 import {Pagination} from '@mui/material'
 import s from './SuperPagination.module.css'
@@ -11,7 +11,7 @@ export type SuperPaginationPropsType = {
     onChange: (page: number, count: number) => void
 }
 
-const SuperPagination: React.FC<SuperPaginationPropsType> = (
+const SuperPagination: React.FC<SuperPaginationPropsType> = memo((
     {
         page,
         itemsCountForPage,
@@ -66,6 +66,6 @@ const SuperPagination: React.FC<SuperPaginationPropsType> = (
             </span>
         </div>
     )
-}
+})
 
 export default SuperPagination
