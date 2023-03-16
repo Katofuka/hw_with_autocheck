@@ -65,7 +65,7 @@ const HW15 = () => {
         // делает студент
         setPage(newPage)
         setCount(newCount)
-        setSearchParams({ page: newPage.toString(), count: newCount.toString() })
+        setSearchParams({ page: newPage.toString(), count: newCount.toString(), sort })
         //
     }, [setSearchParams])
 
@@ -74,7 +74,7 @@ const HW15 = () => {
         // console.log('onChangeSort-----', 'newSort: ', newSort)
         setSort(newSort)
         setPage(1) // при сортировке сбрасывать на 1 страницу
-        setSearchParams({sort: newSort})
+        setSearchParams({page: page.toString(), count: count.toString() , sort: newSort})
     }, [setSearchParams])
 
     useEffect(() => {
@@ -101,8 +101,8 @@ const HW15 = () => {
             <div className={s2.hwTitle}>Homework #15</div>
 
             <div className={s2.hw}>
-                {/*{idLoading && <div id={'hw15-loading'} className={s.loading}><div></div><div></div></div>}*/}
-                <div id={'hw15-loading'} className={s.loadin}>Loadin...</div>
+                {idLoading && <div id={'hw15-loading'} className={s.loading}><div></div><div></div></div>}
+                {/*<div id={'hw15-loading'} className={s.loadin}>Loadin...</div>*/}
                 <SuperPagination
                     page={page}
                     itemsCountForPage={count}

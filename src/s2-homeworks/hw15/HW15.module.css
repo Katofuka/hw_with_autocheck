@@ -1,6 +1,6 @@
-.hw {
-    position: relative;
-}
+/*.hw {*/
+/*    position: relative;*/
+/*}*/
 
 .tech {
     width: 50vw;
@@ -35,14 +35,10 @@
 
 .loading {
     display: inline-block;
-    text-align: center;
     position: absolute;
     background-color: rgba(0, 0, 0, 0.6);
-
     width: 80px;
     height: 80px;
-    margin-top: 50%;
-
 }
 .loading div {
     position: absolute;
