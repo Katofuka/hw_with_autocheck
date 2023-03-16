@@ -74,13 +74,12 @@ const HW15 = () => {
         // console.log('onChangeSort-----', 'newSort: ', newSort)
         setSort(newSort)
         setPage(1) // при сортировке сбрасывать на 1 страницу
-
-        setSearchParams({sort: newSort.toString()})
+        setSearchParams({sort: newSort})
     }
 
     useEffect(() => {
         const params = Object.fromEntries(searchParams)
-        sendQuery({page: params.page, count: params.count})
+        sendQuery({page: params.page, count: params.count, sort: params.sort})
         setPage(+params.page || 1)
         setCount(+params.count || 4)
     }, [searchParams])
