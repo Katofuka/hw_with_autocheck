@@ -66,12 +66,10 @@ const HW15 = () => {
         setPage(newPage)
         setCount(newCount)
         setSearchParams({ page: newPage.toString(), count: newCount.toString(), sort })
-        //
     }, [setSearchParams])
 
     const onChangeSort = useCallback((newSort: string) => {
         // делает студент
-        // console.log('onChangeSort-----', 'newSort: ', newSort)
         setSort(newSort)
         setPage(1) // при сортировке сбрасывать на 1 страницу
         setSearchParams({page: "1", count: count.toString() , sort: newSort})
