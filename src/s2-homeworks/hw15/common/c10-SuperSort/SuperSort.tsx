@@ -20,9 +20,9 @@ export const pureChange = (sort: string, down: string, up: string) => {
     // sort: (click) => down (click) => up (click) => '' (click) => down ...
 
 
-    if(sort === '') return down
-    else if (sort === down) return up
-    else return ''
+    if (sort === down) return up
+    if (sort === up) return ''
+    return down
 }
 
 const SuperSort: React.FC<SuperSortPropsType> = (
