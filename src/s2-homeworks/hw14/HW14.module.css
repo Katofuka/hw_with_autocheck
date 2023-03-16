@@ -1,0 +1,16 @@
+.findBlock {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+
+
+.findBlock .techBlock .tech {
+
+}
+
+.findBlock .loading {
+    color: #4D4D4D;
+    font-size: 14px;
+
+}
